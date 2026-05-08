@@ -87,3 +87,156 @@ body,
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
+
+.admin-content {
+  container-type: inline-size;
+  min-width: 0;
+}
+
+.admin-content img,
+.admin-content video,
+.admin-content canvas,
+.admin-content svg {
+  max-width: 100%;
+}
+
+.admin-content table {
+  width: 100%;
+}
+
+.admin-content input,
+.admin-content select,
+.admin-content textarea,
+.admin-content button {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .admin-shell {
+    flex-direction: column !important;
+    min-width: 320px;
+    overflow: hidden !important;
+  }
+
+  .admin-sidebar {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    max-height: 42dvh;
+    border-right: 0 !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+  }
+
+  .admin-sidebar nav {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    max-height: 28dvh;
+  }
+
+  .admin-sidebar nav > div {
+    margin-bottom: 0 !important;
+    min-width: 0;
+  }
+
+  .admin-sidebar nav a {
+    min-width: 0;
+  }
+
+  .admin-sidebar nav a span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .admin-sidebar > div:last-child {
+    padding: 0.75rem 1rem !important;
+  }
+
+  .admin-content {
+    width: 100%;
+    min-height: 0;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .admin-content > * {
+    max-width: 100%;
+  }
+
+  .admin-content h1 {
+    font-size: 1.25rem;
+    line-height: 1.55rem;
+  }
+
+  .admin-content h2 {
+    font-size: 1.05rem;
+    line-height: 1.4rem;
+  }
+
+  .admin-content .grid {
+    min-width: 0;
+  }
+
+  .admin-content .rounded-3xl {
+    border-radius: 1rem;
+  }
+
+  .admin-content .rounded-2xl {
+    border-radius: 0.875rem;
+  }
+
+  .admin-content [class*="p-8"],
+  .admin-content [class*="p-10"] {
+    padding: 1rem;
+  }
+
+  .admin-content [class*="px-8"],
+  .admin-content [class*="px-10"] {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .admin-content [class*="py-8"],
+  .admin-content [class*="py-10"] {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .admin-content [class*="gap-6"],
+  .admin-content [class*="gap-7"],
+  .admin-content [class*="gap-8"] {
+    gap: 1rem;
+  }
+
+  .admin-content [class*="w-60"],
+  .admin-content [class*="w-64"],
+  .admin-content [class*="w-72"],
+  .admin-content [class*="w-80"],
+  .admin-content [class*="w-96"] {
+    width: 100%;
+  }
+
+  .admin-content [class*="grid-cols-2"],
+  .admin-content [class*="grid-cols-3"],
+  .admin-content [class*="grid-cols-4"],
+  .admin-content [class*="grid-cols-5"] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .admin-content table th,
+  .admin-content table td {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .admin-content .recharts-wrapper,
+  .admin-content .recharts-surface {
+    max-width: 100%;
+  }
+
+  .admin-content .fixed.inset-0 > [class*="max-w-"] {
+    width: calc(100vw - 1.5rem);
+    max-height: calc(100dvh - 1.5rem);
+  }
+}
