@@ -5,8 +5,9 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
+    "postinstall": "node -e \"const fs = require('fs'); if (fs.existsSync('../frontend')) { console.log('Building frontend...'); require('child_process').execSync('npm install --prefix ../frontend && npm run build --prefix ../frontend', { stdio: 'inherit' }); } else { console.log('Frontend directory not found, skipping frontend build.'); }\"",
+    "start": "node --dns-result-order=ipv4first server.js",
+    "dev": "nodemon --dns-result-order=ipv4first server.js",
     "seed": "node admin/seedAdmin.js"
   },
   "dependencies": {
